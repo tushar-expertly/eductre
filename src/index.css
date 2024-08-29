@@ -8,17 +8,17 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif; */
   /* font-family: "Lucida Console", "Courier New", monospace; */
-  font-family: "Courier New", "Lucida Console", "Monaco", monospace !important;
+  font-family:  monospace !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./Assets/background.jpg");
-  background-size: cover; /* Ensure the image covers the entire background */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center; /* Center the image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-attachment: fixed;
 
   color: #000 !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important; 
 }
 
 code {
