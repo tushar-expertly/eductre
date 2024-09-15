@@ -4,7 +4,6 @@ import { useCoursesContext } from "../context/courses_context";
 import { Link } from "react-router-dom";
 import { Oval } from "react-loader-spinner";
 import parse from "html-react-parser";
-
 import {
   MDBContainer,
   MDBRow,

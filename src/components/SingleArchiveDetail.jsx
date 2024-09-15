@@ -14,7 +14,7 @@ import parse from "html-react-parser";
 const SingleArchiveDetail = () => {
   const { id } = useParams();
   const { fetchSingleCourse, single_course } = useCoursesContext();
-  console.log("single_course:", single_course);
+  // console.log("single_course:", single_course);
   const { addToCart } = useCartContext();
   const [loading, setLoading] = useState(true);
   const [selectedPricing, setSelectedPricing] = useState(null);
@@ -47,7 +47,7 @@ const SingleArchiveDetail = () => {
       pricing.sessionType === "Recorded session" ||
       pricing.sessionType === "Recorded Plus Transcript session"
   ).sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-  console.log("filteredPricings:", filteredPricings);
+  // console.log("filteredPricings:", filteredPricings);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,10 +58,10 @@ const SingleArchiveDetail = () => {
   }, [id, fetchSingleCourse]);
 
   useEffect(() => {
-    if (single_course && single_course.Pricings) {
-      setSelectedPricing(filteredPricings[0]);
+    if (single_course && single_course?.Pricings) {
+      setSelectedPricing(single_course?.Pricings[8]);
     }
-  }, [single_course,filteredPricings]);
+  }, [single_course]);
 
   if (loading) {
     return (
