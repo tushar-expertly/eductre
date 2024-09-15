@@ -20,6 +20,11 @@ import {
 function Training() {
   const { courses } = useCoursesContext();
   const [loading, setLoading] = useState(true);
+
+  const filteredCourses = courses.filter(
+    (course) => course.archieve === null || course.archieve === false
+  );
+
   // console.log(courses);
   // console.log('coursess:', courses)
   // if (!courses || courses.length === 0) {
@@ -56,7 +61,6 @@ function Training() {
       </div>
     );
   }
-
   function convertMinutes(minutes) {
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
@@ -71,7 +75,7 @@ function Training() {
   return (
     <Layout>
       <MDBContainer fluid>
-        {courses?.map((course) => (
+        {filteredCourses?.map((course) => (
           <MDBRow
             className="justify-content-center mb-3"
             key={course?.courseID}
